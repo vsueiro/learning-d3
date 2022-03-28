@@ -16,7 +16,8 @@ let data = [
   }
 ]
 
-let chart = d3.select( '.chart' )
+let chart = d3.select( 'div' )
+  .style( 'padding', '4px 0' )
 
 let bars = chart.selectAll( 'div' )
   .data( data )
@@ -25,9 +26,12 @@ let bars = chart.selectAll( 'div' )
 
 bars
   .text( d => d.label )
+  .style( 'display', 'flex' )
+  .style( 'flex-direction', 'column' )
+  .style( 'justify-content', 'center' )
 
 bars
   .style( 'width', d => d.value * 20 + 'px' )
   .style( 'height', '40px' )
-  .style( 'margin', '4px' )
+  .style( 'margin', '4px 0' )
   .style( 'background-color', 'pink' )
